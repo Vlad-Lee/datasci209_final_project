@@ -1,0 +1,318 @@
+/* ---------- Base / typography ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #1a1a1a;
+  --paper: #faf8f5;
+  --accent: #2d6a4f;
+  --muted: #6b6b6b;
+  --sidebar-width: 200px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+/* Sidebar: fixed to the left edge, scrolls independently if the link
+   list is ever taller than the viewport. Page content is offset by
+   --sidebar-width via .main-content and otherwise flows normally. */
+.sidebar-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+  padding: 30rem 1.5rem 2rem;
+  background: rgba(250, 248, 245, 0.95);
+  border-right: 1px solid #ddd;
+  backdrop-filter: blur(4px);
+}
+
+.sidebar-nav nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.sidebar-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.sidebar-nav a:hover { color: var(--accent); }
+
+.sidebar-nav a.active { color: var(--accent); }
+
+.main-content {
+  margin-left: var(--sidebar-width);
+}
+
+/* ---------- Cover ---------- */
+#cover {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.authors {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+#cover h1 { font-size: 7rem; margin-bottom: 0.5rem; line-height: 1.05; }
+#cover h2 { font-size: 1.75rem; font-weight: 400; color: var(--muted); margin-top: 0; }
+
+.cover-map {
+  width: 100%;
+  max-width: 1500px;
+  height: 95vh;
+  min-height: 850px;
+  margin: 2rem auto 0;
+  align-self: center;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cover-map tableau-viz {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hook-stats {
+  display: flex;
+  gap: 3rem;
+  margin: 2.5rem 0;
+}
+
+.hook-stat .big-num {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: block;
+}
+
+.hook-stat .label { font-size: 1.15rem; color: var(--muted); }
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.75rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ---------- Intro / Conclusion (single column) ---------- */
+.single-col-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 6rem 3.5rem;
+}
+
+.single-col-section h2 {
+  font-size: 2.75rem;
+  margin: 0 0 1.5rem;
+  color: var(--accent);
+}
+
+.single-col-section .chart-wrap {
+  margin: 2rem 0;
+  height: 60vh;
+}
+
+/* ---------- Hypothesis sections (stacked: chart on top, text below) ---------- */
+.hypothesis-header {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4rem 2rem 1.5rem;
+}
+
+.section-eyebrow {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hypothesis-header h2 { font-size: 2.75rem; margin: 0 0 0.75rem; }
+.hypothesis-header .lede { color: var(--muted); font-size: 1.35rem; margin: 0; }
+
+/* Figure block: full-width chart with tab selector above it, caption below */
+.figure-block {
+  max-width: 1300px;
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+}
+
+.figure-label {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.chart-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.chart-tabs button {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.6rem 1.15rem;
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.chart-tabs button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.chart-wrap-full {
+  width: 100%;
+  height: 85vh;
+  min-height: 560px;
+}
+
+.chart-wrap-full tableau-viz {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* For dashboards that are naturally wide and short (like faceted
+   scatterplots side by side) rather than tall, so we don't leave a
+   block of empty space below the rendered viz. */
+.chart-wrap-wide {
+  width: 100%;
+  height: 55vh;
+  min-height: 480px;
+  max-height: 650px;
+}
+
+.chart-wrap-wide tableau-viz {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.figure-caption {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+.chart-headline {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+.figure-intro {
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.prose-note {
+  font-size: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Prose: plain paragraphs below the figure, single column */
+.prose {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+}
+
+.prose p { font-size: 1.2rem; margin-bottom: 1.25rem; }
+.prose strong { color: var(--accent); }
+
+/* ---------- Takeaway (no-chart, full width) ---------- */
+.takeaway {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.takeaway blockquote {
+  font-size: 1.7rem;
+  margin: 0 0 1.5rem;
+}
+
+.callout-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .sidebar-nav {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar-nav nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  #cover h1 { font-size: 3.5rem; }
+
+  .chart-wrap-full { height: 50vh; }
+  .chart-wrap-wide { height: 40vh; }
+  .hook-stats { flex-direction: column; gap: 1.5rem; }
+}

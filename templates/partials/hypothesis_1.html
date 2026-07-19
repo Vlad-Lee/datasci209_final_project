@@ -1,0 +1,115 @@
+<section id="hypothesis-1">
+
+  <div class="hypothesis-header">
+    <div class="section-eyebrow">Hypothesis 1</div>
+    <h2>More Children, Less Shade</h2>
+    <p class="lede">
+      We hypothesize that California neighborhoods with higher child
+      populations have measurably less tree canopy, and that this pattern
+      holds across the state's largest cities once income is accounted for.
+    </p>
+  </div>
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 1</div>
+    <div class="chart-tabs">
+      <button type="button" class="tab active" data-sheet="Statewide Scatter">
+        Statewide Scatter
+      </button>
+      <button type="button" class="tab" data-sheet="Scatter Faceted">
+        Faceted by City (Raw Canopy)
+      </button>
+      <button type="button" class="tab" data-sheet="Scatter Faceted Filtered (TC)">
+        Faceted by City (Poverty Filter)
+      </button>
+      <!-- TODO: confirm exact sheet name for the TES version of this chart -->
+      <button type="button" class="tab" data-sheet="Tree Equity Score">
+        Tree Equity Score
+      </button>
+      <!-- TODO: confirm exact dashboard name for the 3-city map view -->
+      <button type="button" class="tab" data-sheet="3-City Dashboard">
+        3-City Map
+      </button>
+    </div>
+
+    <div class="chart-wrap-full">
+      <tableau-viz id="viz-h1"
+        src="https://public.tableau.com/views/final_project_17820877015870/ScatterFaceted"
+        toolbar="bottom" hide-tabs>
+      </tableau-viz>
+    </div>
+
+    <p class="figure-caption">
+      Vlad Lee. Five views of the same question: child share vs. tree canopy
+      and equity, from statewide to city-level to geographic. Use the tabs
+      to step through the analysis. Source: American Forests Tree Equity
+      Score dataset.
+    </p>
+  </div>
+
+  <div class="prose">
+    <p>
+      Plotting every California census block group against the statewide
+      canopy average (see the "Statewide Scatter" tab), the trend line
+      slopes downward: neighborhoods where children make up a larger share
+      of the population consistently fall below the average. This held even
+      after accounting for rural counties like Shasta and Tuolumne, where
+      natural forest cover can inflate canopy numbers without reflecting
+      urban investment.
+    </p>
+    <p>
+      Breaking the data into California's five largest urban areas ("Faceted
+      by City (Raw Canopy)" tab) revealed something unexpected. LA, Riverside, and
+      Sacramento all confirm the statewide pattern, more children, less
+      canopy. But <strong>San Diego and San Francisco appear to break
+      it</strong>, showing flat or positive slopes.
+    </p>
+    <p>
+      Switching to the poverty-filtered tab, which only shows high-poverty
+      block groups (&ge;20% below the federal line): <strong>San Diego's
+      positive slope collapses</strong>. Its apparent exception was an
+      artifact of wealthy neighborhoods, filtering to poverty removes the
+      noise. San Francisco's slope softens but persists, hinting at
+      something more structural.
+    </p>
+    <p>
+      Raw canopy has a blind spot: it measures trees, not equity. The
+      <strong>Tree Equity Score (TES)</strong> folds in income, urban heat,
+      health outcomes, and density alongside canopy, a neighborhood can have
+      adequate trees and still score low if conditions make shade more
+      critical there. Switching to the TES tab, the exceptions disappear:
+      <strong>all five cities show a negative relationship</strong> between
+      child share and tree equity. This is the key finding: the tree equity
+      gap for children is universal across California's urban areas.
+    </p>
+    <p>
+      Mapping the three largest cities ("3-City Map" tab) reveals how
+      differently the deficit plays out geographically.
+      <strong>Los Angeles</strong> is overwhelmingly red in its urban core,
+      deficit concentrated exactly where children are most dense, with green
+      appearing only at the wealthy hillside periphery or low-density outer
+      areas. <strong>San Diego</strong> shows more variation, mature street
+      tree networks inner-city, lagging suburban fringe.
+      <strong>San Francisco</strong> shows a compressed range with few
+      extreme outliers, but equity gaps persist in the Tenderloin and
+      Bayview.
+    </p>
+  </div>
+
+  <div class="takeaway">
+    <blockquote>
+      <strong>Finding:</strong> California's tree equity gap for children is
+      structural and citywide. Raw canopy can mislead, the San Diego and San
+      Francisco exceptions disappear once controlling for income or
+      measuring equity directly. Los Angeles's deficit runs deepest. Where a
+      child lives determines not just whether they have shade, but whether
+      their neighborhood is on the path to getting it.
+    </blockquote>
+    <div class="callout-stats">
+      <span>LA trend line slope: most negative of all 5 cities</span>
+      <span>All 5 cities show negative TES slope when measuring equity</span>
+      <span>SD exception: vanishes when filtering to poverty &ge; 20%</span>
+    </div>
+  </div>
+
+</section>

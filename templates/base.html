@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaded or Shadowed? Tree Equity in California</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/scrolly.css') }}" />
+  <!-- Tableau Embedding API v3 -->
+  <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+<body>
+  <aside class="sidebar-nav">
+    <nav>
+      <a href="#cover" class="sidebar-link" data-section="cover">Cover</a>
+      <a href="#intro" class="sidebar-link" data-section="intro">Intro</a>
+      <a href="#hypothesis-1" class="sidebar-link" data-section="hypothesis-1">H1</a>
+      <a href="#hypothesis-2" class="sidebar-link" data-section="hypothesis-2">H2</a>
+      <a href="#hypothesis-3" class="sidebar-link" data-section="hypothesis-3">H3</a>
+      <a href="#hypothesis-4" class="sidebar-link" data-section="hypothesis-4">H4</a>
+      <a href="#conclusion" class="sidebar-link" data-section="conclusion">Conclusion</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', filename='js/scrolly.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<section id="hypothesis-4">
+
+  <div class="hypothesis-header">
+    <div class="section-eyebrow">Hypothesis 4</div>
+    <h2>Socioeconomically Disadvantaged Neighborhoods Have Lower Tree Equity Scores</h2>
+    <p class="lede">
+      This section explores whether socioeconomically disadvantaged
+      communities consistently experience lower Tree Equity Scores and
+      identifies the environmental factors associated with these
+      disparities. The prototype combines three coordinated, interactive
+      visualizations that allow users to investigate the relationship
+      between socioeconomic disadvantage, geographic location, and
+      environmental conditions. Together, these views show that
+      disadvantaged communities generally have lower Tree Equity Scores,
+      while also highlighting where these disparities occur and how they
+      relate to tree canopy and urban heat.
+    </p>
+  </div>
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 1</div>
+    <div class="chart-wrap-full">
+      <tableau-viz id="viz-h4-county-map"
+        src="https://public.tableau.com/views/project-midterm/CACountyMapView"
+        toolbar="bottom" hide-tabs>
+      </tableau-viz>
+    </div>
+  </div>
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 2</div>
+    <div class="chart-wrap-full">
+      <tableau-viz id="viz-h4-eps-dash"
+        src="https://public.tableau.com/views/project-midterm-2/EPSDash"
+        toolbar="bottom" hide-tabs>
+      </tableau-viz>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      The section is structured as a top-to-bottom narrative to guide users
+      from a broad geographic overview to progressively deeper analysis.
+      The first view presents two synchronized county-level choropleth
+      maps comparing average Tree Equity Score and Priority Index,
+      providing a statewide perspective and allowing users to identify
+      regions requiring the greatest attention. Selecting a county filters
+      the remaining visualizations, enabling seamless drill-down
+      exploration. (not yet implemented) The second view is an interactive
+      scatterplot relating tree canopy to temperature difference, with
+      points colored by a user-selected metric such as Tree Equity Score
+      or Priority Index. This allows users to investigate the
+      environmental conditions associated with disadvantaged communities
+      and identify areas that experience both limited canopy and elevated
+      temperatures. Additionally, axis averages split the plot into
+      quadrants, allowing users to draw further conclusions based on
+      relative quadrant position. Finally, the section concludes with a
+      distribution plot comparing Tree Equity Scores between disadvantaged
+      and non-disadvantaged communities, summarizing the overall statewide
+      disparity and reinforcing the trends observed in the previous
+      visualizations.
+    </p>
+    <p>
+      This layout follows the natural workflow of exploratory analysis:
+      users first identify where disparities exist, then explore why they
+      exist through environmental relationships, and finally validate
+      those observations with a statewide comparison of Tree Equity Score
+      distributions. This hopefully creates a clear narrative while
+      encouraging interaction through coordinated filters and
+      cross-highlighting, allowing users to move fluidly between statewide
+      patterns and localized investigations.
+    </p>
+  </div>
+
+</section>

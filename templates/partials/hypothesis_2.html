@@ -1,0 +1,70 @@
+<section id="hypothesis-2">
+
+  <div class="hypothesis-header">
+    <div class="section-eyebrow">Hypothesis 2</div>
+    <h2>Do neighborhoods with more tree canopy actually run cooler?</h2>
+    <p class="lede">
+      Every point in this section is a California census block group.
+      Scroll down to see what the data shows.
+    </p>
+  </div>
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 1</div>
+    <h3 class="chart-headline">The leafier the block, the cooler it runs.</h3>
+    <div class="chart-wrap-full">
+      <tableau-viz id="viz-h2-bar"
+        src="https://public.tableau.com/views/TreesExploratory-Assignment-Template/AverageTemperatureDifferencebyTree-CanopyLevel"
+        toolbar="bottom" hide-tabs>
+      </tableau-viz>
+    </div>
+    <p class="figure-caption">
+      Average temperature sits about 1.8°C above the city average where
+      there is almost no canopy, and drops to about 5.4°C below it in the
+      leafiest blocks. The trend is steady across all 24,000+ California
+      block groups. Canopy on its own only explains about 9% of the
+      variation, so it is one real factor among several, not the whole
+      story.
+    </p>
+  </div>
+
+  <div class="prose">
+    <p>
+      So why does canopy cool a block? It comes down to shade, and
+      specifically shade from trees and plants rather than from buildings.
+      The chart below plots how much of each block's shade comes from
+      vegetation against how hot it runs. Use the tabs to change the time
+      of day and watch how the pattern shifts.
+    </p>
+    <p class="prose-note">
+      Temperature is measured against each city's own average, not in
+      absolute degrees, so compare blocks within a city rather than
+      across cities.
+    </p>
+  </div>
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 2</div>
+    <p class="figure-intro">
+      Explore it yourself. Click through the times of day, and hover any
+      point to read that block's exact shade and temperature.
+    </p>
+    <div class="chart-wrap-wide">
+      <tableau-viz id="viz-h2-scatter"
+        src="https://public.tableau.com/views/TreesExploratory-Assignment-Template/VegetationShadevs_TemperatureDifference"
+        toolbar="bottom">
+      </tableau-viz>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      The relationship is steepest at midday, when the sun is high and
+      tree shade does the most work, and it flattens out by evening.
+      Either way the direction holds: more vegetation shade, cooler
+      blocks. That sets up the next question, which is who actually lives
+      in the hottest blocks.
+    </p>
+  </div>
+
+</section>
