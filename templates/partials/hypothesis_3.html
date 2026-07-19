@@ -1,0 +1,70 @@
+<section id="hypothesis-3">
+
+  <div class="hypothesis-header">
+    <div class="section-eyebrow">Hypothesis 3</div>
+    <h2>Historic redlining translates to modern-day environmental disparities.</h2>
+    <p class="lede">
+      We hypothesize that neighborhoods originally designated with lower
+      HOLC grades (C and D) maintain higher concentrations of poverty and
+      BIPOC communities today, while simultaneously experiencing greater
+      modern-day heat disparities than communities graded A or B.
+    </p>
+  </div>
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 1</div>
+    <div class="chart-wrap-full">
+      <tableau-viz id="viz-h3-holc"
+        src="https://public.tableau.com/views/DATASCI209Project-HOLCGrades/Dashboard3"
+        toolbar="bottom" hide-tabs>
+      </tableau-viz>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>
+      Established in 1933 as part of the New Deal, the Home Owners' Loan
+      Corporation (HOLC) created "Residential Security" maps for over 200
+      growing cities, grading neighborhoods from A ("Best") to D
+      ("Hazardous") based largely on racial demographics. These maps
+      institutionalized the practice of redlining, cutting off
+      lower-graded BIPOC communities from investment and systematically
+      denying them mortgages for decades.
+    </p>
+    <p>
+      Segmenting California's modern census block groups by their
+      historical 1930s HOLC grades reveals how redlining translates today
+      to environmental disparities. In looking at neighborhoods statewide
+      graded A ("Best") and B ("Still Desirable"), the data points cluster
+      tightly in the bottom-left quadrant: these communities remain
+      overwhelmingly white, low-poverty, and visually dominated by cool
+      blue hues, indicating temperatures well below their county
+      averages. A dramatic shift occurs as we cross into historical C
+      ("Declining") and D ("Hazardous") zones. Here, the data points
+      migrate aggressively upward and to the right, showing a clear
+      modern-day consolidation of high-poverty and BIPOC communities.
+    </p>
+    <p>
+      Filtering the data by county reveals how local geography interacts
+      with this historical legacy. Los Angeles County perfectly mirrors
+      the statewide pattern: as the POC population and poverty rates
+      climb in historical D zones, the color palette shifts aggressively
+      to orange and deep red, exposing a severe urban heat island effect
+      born from a century of concrete over-investment and canopy neglect.
+    </p>
+    <p>
+      However, filtering for San Francisco County reveals an intriguing
+      anomaly: despite possessing clear demographic disparities in its C
+      and D zones, almost the entire county shows cool blue tones. This
+      uniform cooling is a geographic artifact of San Francisco's unique
+      microclimate, and the city's tight maritime peninsula, dense marine
+      layer, and powerful coastal wind currents heavily suppress heat
+      spikes. While San Francisco's physical temperature is stabilized by
+      the Pacific Ocean, the stark concentration of poverty and BIPOC
+      populations within its historical C and D zones proves that the
+      socioeconomic scars of redlining remain fully intact, even where
+      nature masks the environmental disparity.
+    </p>
+  </div>
+
+</section>
