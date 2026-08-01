@@ -2,74 +2,152 @@
 
   <div class="hypothesis-header">
     <div class="section-eyebrow">Hypothesis 4</div>
+
     <h2>Socioeconomically Disadvantaged Neighborhoods Have Lower Tree Equity Scores</h2>
+
     <p class="lede">
-      This section explores whether socioeconomically disadvantaged
-      communities consistently experience lower Tree Equity Scores and
-      identifies the environmental factors associated with these
-      disparities. The prototype combines three coordinated, interactive
-      visualizations that allow users to investigate the relationship
-      between socioeconomic disadvantage, geographic location, and
-      environmental conditions. Together, these views show that
-      disadvantaged communities generally have lower Tree Equity Scores,
-      while also highlighting where these disparities occur and how they
-      relate to tree canopy and urban heat.
+      This section explores whether socioeconomically disadvantaged communities
+      consistently experience lower Tree Equity Scores and identifies the
+      environmental factors associated with these disparities through a series
+      of coordinated visualizations.
     </p>
   </div>
 
+  <!-- ================= Figure 1 ================= -->
+
   <div class="figure-block">
     <div class="figure-label">Figure 1</div>
+
     <div class="chart-wrap-full">
       <tableau-viz id="viz-h4-county-map"
         src="https://public.tableau.com/views/project-midterm/CACountyMapView"
-        toolbar="bottom" hide-tabs>
-      </tableau-viz>
-    </div>
-  </div>
-
-  <div class="figure-block">
-    <div class="figure-label">Figure 2</div>
-    <div class="chart-wrap-full">
-      <tableau-viz id="viz-h4-eps-dash"
-        src="https://public.tableau.com/views/project-midterm-2/EPSDash"
-        toolbar="bottom" hide-tabs>
+        toolbar="bottom"
+        hide-tabs>
       </tableau-viz>
     </div>
   </div>
 
   <div class="prose">
+
     <p>
-      The section is structured as a top-to-bottom narrative to guide users
-      from a broad geographic overview to progressively deeper analysis.
-      The first view presents two synchronized county-level choropleth
-      maps comparing average Tree Equity Score and Priority Index,
-      providing a statewide perspective and allowing users to identify
-      regions requiring the greatest attention. Selecting a county filters
-      the remaining visualizations, enabling seamless drill-down
-      exploration. (not yet implemented) The second view is an interactive
-      scatterplot relating tree canopy to temperature difference, with
-      points colored by a user-selected metric such as Tree Equity Score
-      or Priority Index. This allows users to investigate the
-      environmental conditions associated with disadvantaged communities
-      and identify areas that experience both limited canopy and elevated
-      temperatures. Additionally, axis averages split the plot into
-      quadrants, allowing users to draw further conclusions based on
-      relative quadrant position. Finally, the section concludes with a
-      distribution plot comparing Tree Equity Scores between disadvantaged
-      and non-disadvantaged communities, summarizing the overall statewide
-      disparity and reinforcing the trends observed in the previous
-      visualizations.
+      The first dashboard was developed to establish
+      <strong>where tree equity disparities are concentrated across
+      California</strong>. We began with the county-level Tree Equity Score
+      analysis from our exploratory work and expanded it into a side-by-side
+      comparison of average Tree Equity Score and Priority Index. The Tree
+      Equity Score provides a measure of existing tree equity, while the
+      Priority Index helps identify communities where additional investment may
+      be most needed. Interactive filters for disadvantaged status,
+      population, HOLC grade, urban area, and county allow users to examine
+      how these patterns change across different populations and geographic
+      contexts.
     </p>
+
     <p>
-      This layout follows the natural workflow of exploratory analysis:
-      users first identify where disparities exist, then explore why they
-      exist through environmental relationships, and finally validate
-      those observations with a statewide comparison of Tree Equity Score
-      distributions. This hopefully creates a clear narrative while
-      encouraging interaction through coordinated filters and
-      cross-highlighting, allowing users to move fluidly between statewide
-      patterns and localized investigations.
+      The statewide pattern suggests that
+      <strong>tree equity is not evenly distributed across California</strong>.
+      Counties with lower average Tree Equity Scores also tend to show higher
+      priority needs, indicating that communities with fewer existing tree
+      benefits may simultaneously be those where additional investment is most
+      warranted. Importantly, these differences become more meaningful when
+      the dashboard is filtered to disadvantaged communities: the map allows
+      users to see that disadvantage is not simply an individual
+      characteristic, but is geographically concentrated in particular
+      regions. This provides an important geographic context for the
+      hypothesis and helps identify where disparities are most pronounced.
     </p>
+
+  </div>
+
+  <!-- ================= Figure 2 ================= -->
+
+  <div class="figure-block">
+    <div class="figure-label">Figure 2</div>
+
+    <div class="chart-wrap-full">
+      <tableau-viz id="viz-h4-eps-dash"
+        src="https://public.tableau.com/views/project-midterm-2/EPSDash"
+        toolbar="bottom"
+        hide-tabs>
+      </tableau-viz>
+    </div>
+  </div>
+
+  <div class="prose">
+
+    <p>
+      The second dashboard was developed to investigate
+      <strong>what environmental conditions may contribute to these
+      differences in tree equity</strong>. Our exploratory analysis showed a
+      negative relationship between tree canopy and temperature difference, so
+      we expanded this relationship into an interactive scatterplot. Each
+      point represents a census block group, with tree canopy on the x-axis
+      and temperature difference on the y-axis. The average values divide the
+      plot into quadrants, allowing us to identify communities with
+      relatively low canopy and high temperatures. Users can also change the
+      metric used to color the points, making it possible to examine how Tree
+      Equity Score, Priority Index, and other measures relate to these
+      environmental conditions.
+    </p>
+
+    <p>
+      The relationship provides an important explanation for the broader
+      disparity observed in Figure 1.
+      <strong>Communities with less tree canopy tend to experience greater
+      temperature disparities</strong>, meaning that disadvantaged
+      communities with low tree equity may face a combination of fewer trees
+      and greater exposure to heat. The relationship is not perfectly linear,
+      however, and the substantial variation in temperature at similar levels
+      of canopy demonstrates that tree canopy alone does not explain
+      differences in heat exposure. Other factors such as built environment,
+      geography, and local climate likely play important roles.
+    </p>
+
+    <p>
+      The final distribution in Figure 2 provides the clearest evidence for
+      the hypothesis.
+      <strong>Disadvantaged communities are shifted substantially toward
+      lower Tree Equity Scores compared with non-disadvantaged
+      communities.</strong> Non-disadvantaged communities have a much larger
+      concentration of scores toward the upper end of the scale, including a
+      notable concentration near 100, while disadvantaged communities are
+      more concentrated around the mid-to-lower range. This difference
+      suggests that the disparity is not driven simply by a few unusually
+      low-scoring neighborhoods; rather, disadvantaged communities as a group
+      experience systematically lower tree equity.
+    </p>
+
+  </div>
+
+  <!-- ================= Conclusion ================= -->
+
+  <div class="prose">
+
+    <p>
+      <strong>Overall, the data support Hypothesis 4.</strong> Across
+      California, disadvantaged communities tend to have lower Tree Equity
+      Scores than non-disadvantaged communities, while also exhibiting
+      environmental characteristics associated with lower tree equity,
+      including reduced tree canopy and greater temperature disparities. The
+      county-level analysis demonstrates that these disparities are
+      geographically concentrated, while the environmental analysis suggests
+      that limited canopy and heat exposure are important components of the
+      broader inequity.
+    </p>
+
+    <p>
+      However, these results should be interpreted as
+      <strong>associations rather than evidence of causation</strong>. The
+      relatively weak relationship between tree canopy and temperature
+      indicates that canopy is only one contributor to local heat conditions,
+      and the Tree Equity Score itself incorporates several underlying
+      socioeconomic and environmental factors. Thus, the findings are
+      strongest as evidence of a
+      <strong>systematic disparity in environmental conditions</strong>,
+      rather than proof that socioeconomic disadvantage directly causes lower
+      tree equity.
+    </p>
+
   </div>
 
 </section>
