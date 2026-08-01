@@ -147,6 +147,23 @@ body {
   height: 60vh;
 }
 
+.definitions-list {
+  margin: 2rem 0;
+}
+
+.definitions-list dt {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-top: 1.5rem;
+}
+
+.definitions-list dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+
 /* ---------- Hypothesis sections (stacked: chart on top, text below) ---------- */
 .hypothesis-header {
   max-width: 760px;
