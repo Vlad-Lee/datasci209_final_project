@@ -9,14 +9,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const readyVizzes = new WeakSet();
-  document.querySelectorAll('tableau-viz').forEach((viz) => {
-    viz.addEventListener('firstinteractive', () => readyVizzes.add(viz));
-  });
+  // If a sheet is requested before the viz fires 'firstinteractive', we queue
+  // it here instead of dropping it, so the click isn't silently lost.
+  const pendingSheet = new WeakMap();
 
   function activateSheet(viz, sheetName) {
     if (!viz || !sheetName) return;
     if (!readyVizzes.has(viz) || !viz.workbook || typeof viz.workbook.activateSheetAsync !== 'function') {
-      console.warn('Viz not ready yet, skipping activateSheetAsync for', sheetName);
+      pendingSheet.set(viz, sheetName);
+      console.warn('Viz not ready yet, queued sheet', sheetName, 'to activate once interactive');
       return;
     }
     viz.workbook.activateSheetAsync(sheetName).catch((err) => {
@@ -24,9 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.querySelectorAll('tableau-viz[data-default-sheet]').forEach((viz) => {
+  document.querySelectorAll('tableau-viz').forEach((viz) => {
     viz.addEventListener('firstinteractive', () => {
-      activateSheet(viz, viz.dataset.defaultSheet);
+      readyVizzes.add(viz);
+      // Activate whatever was queued (a click that arrived too early), or
+      // fall back to the viz's declared default sheet.
+      const queued = pendingSheet.get(viz) || viz.dataset.defaultSheet;
+      if (queued) {
+        pendingSheet.delete(viz);
+        activateSheet(viz, queued);
+      }
     });
   });
 
