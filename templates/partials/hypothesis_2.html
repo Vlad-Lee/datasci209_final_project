@@ -4,8 +4,9 @@
     <div class="section-eyebrow">Hypothesis 2</div>
     <h2>Do neighborhoods with more tree canopy actually run cooler?</h2>
     <p class="lede">
-      Every point in this section is a California census block group.
-      Scroll down to see what the data shows.
+      Every point in this section is a California census block group,
+      measured against its own city's average temperature. Scroll down
+      to see what the data shows.
     </p>
   </div>
 
@@ -19,35 +20,55 @@
       </tableau-viz>
     </div>
     <p class="figure-caption">
-      Average temperature sits about 1.8°C above the city average where
-      there is almost no canopy, and drops to about 5.4°C below it in the
-      leafiest blocks. The trend is steady across all 24,000+ California
-      block groups. Canopy on its own only explains about 9% of the
-      variation, so it is one real factor among several, not the whole
-      story.
+      Neil Sagoo. Average temperature difference from city average by tree
+      canopy level, all 24,253 California block groups. Filter by EPA
+      community designation or focus on a single metro area. Source:
+      American Forests Tree Equity Score dataset.
     </p>
   </div>
 
   <div class="prose">
     <p>
-      So why does canopy cool a block? It comes down to shade, and
-      specifically shade from trees and plants rather than from buildings.
-      The chart below plots how much of each block's shade comes from
-      vegetation against how hot it runs. Use the tabs to change the time
-      of day and watch how the pattern shifts.
+      The staircase is steady statewide. Block groups with almost no canopy
+      run about 1.8°F hotter than their city average, and each step up in
+      tree cover cools things further, down to about 4.7°F below the city
+      average once canopy passes 60%. Canopy on its own only explains about
+      9% of the variation, so it is one real factor among several, not the
+      whole story.
+    </p>
+    <p>
+      The community designation filter shows who this pattern falls hardest
+      on. Isolate EPA-designated disadvantaged block groups and the whole
+      staircase shifts upward: <strong>at every canopy level, disadvantaged
+      blocks run hotter than non-designated ones</strong>, about 1.5°F hotter
+      on average and almost 3°F in the barest neighborhoods. More trees
+      narrow the gap, but they never fully close it. The same canopy does
+      not deliver the same cooling everywhere.
     </p>
     <p class="prose-note">
       Temperature is measured against each city's own average, not in
       absolute degrees, so compare blocks within a city rather than
       across cities.
     </p>
+    <p>
+      So why does canopy cool a block? It comes down to shade, and
+      specifically shade from trees and plants rather than from buildings.
+      The chart below plots how much of each block's ground is shaded by
+      vegetation against how hot the block runs, at three times of day.
+      The shade data covers 15 of California's 187 urban areas (about
+      11,900 block groups), so this view focuses on the 11 metros with
+      enough coverage to fit a real trend.
+    </p>
   </div>
 
   <div class="figure-block">
     <div class="figure-label">Figure 2</div>
     <p class="figure-intro">
-      Explore it yourself. Click through the times of day, and hover any
-      point to read that block's exact shade and temperature.
+      Explore it yourself. Switch the time of day, filter to a metro area,
+      hover any point to read that block's shade and temperature, or use
+      the highlighter to light up EPA-designated disadvantaged communities.
+      The trend line and the slope in the title update with whatever you
+      select.
     </p>
     <div class="chart-wrap-wide">
       <tableau-viz id="viz-h2-scatter"
@@ -55,16 +76,46 @@
         toolbar="bottom">
       </tableau-viz>
     </div>
+    <p class="figure-caption">
+      Neil Sagoo. Vegetation shade vs. temperature difference at noon,
+      3 p.m., and 6 p.m., colored by tree canopy with the color scale
+      centered at 16%, the statewide average. The trend slope recomputes
+      for the selected time and metro. Source: American Forests Tree
+      Equity Score dataset.
+    </p>
   </div>
 
   <div class="prose">
     <p>
-      The relationship is steepest at midday, when the sun is high and
-      tree shade does the most work, and it flattens out by evening.
-      Either way the direction holds: more vegetation shade, cooler
-      blocks. That sets up the next question, which is who actually lives
-      in the hottest blocks.
+      The slope is the story here. At noon, when the sun is high and tree
+      shade does the most work, every 10 points of vegetation shade is
+      worth about 1.7°F of cooling. By 3 p.m. it is still 1.6°F, and by
+      evening the effect drops to about half a degree. Geography matters
+      too. San Diego shows the steepest payoff, around 3°F per 10 points
+      of shade at noon, with Los Angeles close behind. <strong>In San
+      Francisco the relationship disappears entirely</strong>, because the
+      marine layer cools every block whether it has trees or not. That
+      matches the coastal anomaly in our redlining analysis (Hypothesis 3):
+      the ocean can hide a heat disparity, but it does not undo the
+      inequity underneath.
     </p>
+  </div>
+
+  <div class="takeaway">
+    <blockquote>
+      <strong>Finding:</strong> Shade from vegetation is how tree canopy
+      turns into cooler neighborhoods, worth about 1.7°F per 10 points of
+      shade at midday in California's major metros. But trees do not
+      explain everything. At the same canopy level, EPA-designated
+      disadvantaged communities still run about 1.5°F hotter than their
+      neighbors. That sets up the next question: who actually lives in
+      the hottest, least-shaded blocks.
+    </blockquote>
+    <div class="callout-stats">
+      <span>-1.7°F per +10 pts of vegetation shade at noon, fading to -0.5°F by evening</span>
+      <span>+1.5°F: how much hotter disadvantaged blocks run at the same canopy level</span>
+      <span>San Francisco: the one metro where the trend vanishes, cooled by the marine layer instead of trees</span>
+    </div>
   </div>
 
 </section>
